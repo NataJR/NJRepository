@@ -1,1 +1,57 @@
 
+public class homeTask {
+
+public static void main(String[] args) {
+
+    //используя тернарный оператор заменяем 0 на 1
+
+    int[] arr1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+    for (int i = 0; i < arr1.length; i++) {
+        arr1[i] = arr1[i] == 1 ? 0 : 1;
+        System.out.print(arr1[i] + " ");
+    }
+    // чтобы писать с новой строки каждый ответ, пришлось использовать разделние по строкам отдельным методом,
+    // внтурь метода выводящего на экра не удалось. в чем моя ошибка?
+    System.out.println("\r");
+    int[] arr2 = new int[8];
+    for (int i = 1, j = 0; i < arr2.length; i++) arr2[i] = j += 3;
+    for (int x : arr2) System.out.print(x + " ");
+
+    System.out.println("\r");
+    int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+    for (int i = 0; i < arr3.length; i++) {
+        if (arr3[i] < 6) arr3[i] *= 2;
+        System.out.print(arr3[i] + " ");
+    }
+
+
+    System.out.println("\r");
+    int[][] arr4 = new int[5][5];
+    for (int i = 0; i < arr4.length; i++) {
+        for (int y = 0, y2 = arr4[i].length; y < arr4[i].length; y++, y2--) {
+            if (i == y || i == (y2 - 1)) arr4[i][y] = 1;
+            System.out.print(arr4[i][y] + " ");
+        }
+        System.out.print("\r\n");
+    }
+
+    System.out.println("\r");
+    int[] arr5 = {-6, 12, -8, 10, 91, -131, 1554};
+    //хотела сократить запись до int min;int = max; max = min = arr5[0]; - не пропускает. я  что-то важное упускаю.
+    int min = arr5[0];
+    int max = arr5[0], numberMin = 0, numberMax = 0;
+    for (int i = 0; i < arr5.length; i++) {
+        if (arr5[i] > max) {
+            max = arr5[i];
+            numberMax = i;
+        }
+        if (arr5[i] < min) {
+            min = arr5[i];
+            numberMin = i;
+        }
+    }
+    System.out.println(max);
+    System.out.println(min);
+}
+}
+// шестое задание я даже не поняла, не то что изложить на в коде, я даже в голове его себе не смогла до конца нарисовать
